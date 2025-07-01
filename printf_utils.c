@@ -25,3 +25,8 @@ int print_string(va_list args)
     }
     return count;
 }
+
+int _putchar(char c)
+{
+	return (write(1, &c, 1));
+}
