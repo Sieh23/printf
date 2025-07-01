@@ -15,5 +15,11 @@ int _printf(const char *format, ...);
 
  /* Helper functions */
 int print_string(va_list args);
+ 
+/* self-putchar function*/
+int _putchar(char c)
+{
+	return (write(1, &c, 1));
+}
 
  #endif
