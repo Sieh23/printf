@@ -19,7 +19,12 @@ int print_string(va_list args);
 /* self-putchar function*/
 int _putchar(char c);
 
+<<<<<<< HEAD
 /* Conversion specifier i */
 int integer_i(int i);
+=======
+//helper function to print a percent sign
+int print_percent(va_list args);
+>>>>>>> refs/remotes/origin/main
 
  #endif
