@@ -19,4 +19,7 @@ int print_string(va_list args);
 /* self-putchar function*/
 int _putchar(char c);
 
+//helper function to print a percent sign
+int print_percent(va_list args);
+
  #endif

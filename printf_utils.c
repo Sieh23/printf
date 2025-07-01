@@ -26,7 +26,24 @@ int print_string(va_list args)
     return count;
 }
 
+// _putchar - Writes a character to stdout
+/**
+ * _putchar - Writes a character to stdout
+ * @c: The character to print
+ * Return: On success, returns the number of characters written (1).
+ */
 int _putchar(char c)
 {
 	return (write(1, &c, 1));
+}
+
+/**
+ * print_percent - Prints a percent sign
+ * @args: Argument list (unused)
+ * Return: Number of characters printed (1)
+ */
+int print_percent(va_list args)
+{
+	(void)args;
+	return (_putchar('%'));
 }
