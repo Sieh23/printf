@@ -1,4 +1,19 @@
+#ifndef MAIN_H
+#define MAIN_H
+
+#include <stdarg.h>
+#include <unistd.h>
+#include <stdlib.h>
+
 /**
  * This the the main function
  * Responsible for storing our prototypes
  */
+
+ /* Main printf function */
+int _printf(const char *format, ...);
+
+ /* Helper functions */
+int print_string(va_list args);
+
+ #endif
