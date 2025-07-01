@@ -19,4 +19,7 @@ int print_string(va_list args);
 /* self-putchar function*/
 int _putchar(char c);
 
+/* Conversion specifier i */
+int integer_i(int i);
+
  #endif
