@@ -37,7 +37,7 @@ int _putchar(char c)
 	return (write(1, &c, 1));
 }
 
-<<<<<<< HEAD
+
 int integer_i(int i)
 {
         if (i < 0)
@@ -52,7 +52,7 @@ int integer_i(int i)
         _putchar((i % 10)+ '0');
 
         return(0);
-=======
+
 /**
  * print_percent - Prints a percent sign
  * @args: Argument list (unused)
@@ -62,5 +62,5 @@ int print_percent(va_list args)
 {
 	(void)args;
 	return (_putchar('%'));
->>>>>>> refs/remotes/origin/main
+
 }
