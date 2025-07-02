@@ -1,29 +1,29 @@
 #include "main.h"
 /**
- * This file is going to hold our helper functions 
+ * This file is going to hold our helper functions
  * will be linked to our main function
  *
  */
 
- /**
+/**
  * print_string - Prints a string
  * @args: Argument list
  * Return: Number of characters printed
  */
 int print_string(va_list args)
 {
-    char *str = va_arg(args, char *);
-    int count = 0;
-    if (str == NULL)
-    {
-        str = "(null)";
-    }
-    while (*str)
-    { 
-        count += _putchar(*str);
-        str++;
-    }
-    return count;
+	char *str = va_arg(args, char *);
+	int count = 0;
+	if (str == NULL)
+	{
+		str = "(null)";
+	}
+	while (*str)
+	{
+		count += _putchar(*str);
+		str++;
+	}
+	return count;
 }
 
 // _putchar - Writes a character to stdout
@@ -37,74 +37,103 @@ int _putchar(char c)
 	return (write(1, &c, 1));
 }
 
-
 int integer_i(int i)
 {
-        if (i < 0)
-        {
-                _putchar('-');
-                i = -i;
-        }
-
-        if (i / 10)
-                integer_i(i / 10);
-
-        _putchar((i % 10)+ '0');
-
-        return(0);
-
-/**
- * print_percent - Prints a percent sign
- * @args: Argument list (unused)
- * Return: Number of characters printed (1)
- */
-int print_percent(va_list args)
-{
-	(void)args;
-	return (_putchar('%'));
-
-}
-
-/**
- * print_int - Prints an integer
- * @args: Argument list
- * Return: Number of characters printed
- */
-int print_int(va_list args)
-{
-	int n = va_arg(args, int);
-	int count = 0;
-	unsigned int num;
-
-	if (n < 0)
+	if (i < 0)
 	{
-		count += _putchar('-');
-		num = -n;
-	}
-	else
-	{
-		num = n;
+		_putchar('-');
+		i = -i;
 	}
 
-	if (num / 10)
-		count += print_unsigned_recursive(num / 10);
+	if (i / 10)
+		integer_i(i / 10);
 
-	count += _putchar((num % 10) + '0');
-	return (count);
+	_putchar((i % 10) + '0');
+
+	return (0);
 }
+	/**
+	 * print_percent - Prints a percent sign
+	 * @args: Argument list (unused)
+	 * Return: Number of characters printed (1)
+	 */
+	int print_percent(va_list args)
+	{
+		(void)args;
+		return (_putchar('%'));
+	}
 
-/**
- * print_unsigned_recursive - Helper function to print unsigned int recursively
- * @n: Number to print
- * Return: Number of characters printed
- */
-int print_unsigned_recursive(unsigned int n)
-{
-	int count = 0;
+	/**
+	 * print_int - Prints an integer
+	 * @args: Argument list
+	 * Return: Number of characters printed
+	 */
+	int print_int(va_list args)
+	{
+		int n = va_arg(args, int);
+		int count = 0;
+		unsigned int num;
 
-	if (n / 10)
-		count += print_unsigned_recursive(n / 10);
+		if (n < 0)
+		{
+			count += _putchar('-');
+			num = -n;
+		}
+		else
+		{
+			num = n;
+		}
 
-	count += _putchar((n % 10) + '0');
-	return (count);
-}
+		if (num / 10)
+			count += print_unsigned_recursive(num / 10);
+
+		count += _putchar((num % 10) + '0');
+		return (count);
+	}
+
+	/**
+	 * print_unsigned_recursive - Helper function to print unsigned int recursively
+	 * @n: Number to print
+	 * Return: Number of characters printed
+	 */
+	int print_unsigned_recursive(unsigned int n)
+	{
+		int count = 0;
+
+		if (n / 10)
+			count += print_unsigned_recursive(n / 10);
+
+		count += _putchar((n % 10) + '0');
+		return (count);
+	}
+
+	/**
+	 * print_binary - Converts unsigned int to binary
+	 * @args: Argument list
+	 * Return: Number of characters printed
+	 */
+	int print_binary(va_list args)
+	{
+		unsigned int n = va_arg(args, unsigned int);
+		int count = 0;
+		char binary[32];
+		int i = 0;
+
+		if (n == 0)
+			return (_putchar('0'));
+
+		while (n > 0)
+		{
+			binary[i] = (n % 2) + '0';
+			n /= 2;
+			i++;
+		}
+
+		while (i > 0)
+		{
+			i--;
+			count += _putchar(binary[i]);
+		}
+
+		return (count);
+	}
