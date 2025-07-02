@@ -32,5 +32,7 @@ int print_int(va_list args);
 
 // function to pring binary
 int print_binary(va_list args);
- #endif
+
+int print_unsigned(va_list args);
+#endif
 

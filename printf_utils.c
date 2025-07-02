@@ -137,3 +137,15 @@ int integer_i(int i)
 
 		return (count);
 	}
+
+	/**
+ * print_unsigned - Prints an unsigned integer
+ * @args: Argument list
+ * Return: Number of characters printed
+ */
+int print_unsigned(va_list args)
+{
+	unsigned int n = va_arg(args, unsigned int);
+
+	return (print_unsigned_recursive(n));
+}
