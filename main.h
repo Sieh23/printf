@@ -27,4 +27,9 @@ int integer_i(int i);
 int print_percent(va_list args);
 
 
+<<<<<<< HEAD
+=======
+// function to print an integer
+int print_int(va_list args);
+>>>>>>> 11621d4 (feat: added the print int function for %d and its helper function for unsigned int)
  #endif
