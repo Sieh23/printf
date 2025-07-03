@@ -51,20 +51,23 @@ int print_octal(va_list args);
 /* this is the reverse string function*/
 void _rev_string(char *c);
 
-// print custom string with non-printable chars as \xXX
+/* print custom string with non-printable chars as \xXX */
 int print_custom_string(va_list args);
 
-// print the pointer address
+/* print the pointer address */
 int print_pointer(va_list args);
 
-// print the length of a string
+/* print the length of a string */
 int _strlen(char *s);
 
-// copy a string from source to destination
+/* copy a string from source to destination */
 char *_strcpy(char *dest, char *src);
 
-// print the absolute value of an integer
+/* print the absolute value of an integer */
 int _abs(int n);
+
+/* the _rot13 function */
+void _rot13(char *c);
 
 #endif
 

@@ -405,3 +405,37 @@ int _abs(int n)
 {
 	return (n < 0 ? -n : n);
 }
+
+/**
+ *_rot13 - prints the 13th place equavilent of a character or string 
+ *@c: holds the string or character to be converted
+ *@ind: the index of the passed string lenght 
+ *@ch: does the conversion
+ */
+void _rot13(char *c)
+{
+
+        int ind,ch;
+        for(ind = 0; c[ind] != '\0'; ind++)
+        {
+                ch = c[ind];
+
+                if (ch >= 'a' && ch <= 'z')
+                {
+                        if(ch >= 'a'&& ch <= 'm')
+                                c[ind] = ch +13;
+
+                        else if(ch >= 'n' && ch <= 'z')
+                                c[ind] = ch -13;
+                }
+
+                if (ch >= 'A' && ch <= 'Z')
+                {
+                        if (ch >= 'A' && ch <= 'M')
+                                c[ind] = ch +13;
+
+                        else if (ch >= 'N' && ch <= 'Z')
+                                c[ind] = ch -13;
+                }
+        }
+}
