@@ -308,3 +308,50 @@ int print_custom_string(va_list args)
 
 	return (count);
 }
+
+/**
+ * print_pointer - Prints a pointer address
+ * @args: Argument list
+ * Return: Number of characters printed
+ */
+int print_pointer(va_list args)
+{
+	void *ptr = va_arg(args, void *);
+	unsigned long int addr = (unsigned long int)ptr;
+	int count = 0;
+	char hex[32];
+	int i = 0;
+	char hex_digits[] = "0123456789abcdef";
+
+	if (ptr == NULL)
+	{
+		char *null_str = "(nil)";
+		while (*null_str)
+		{
+			count += _putchar(*null_str);
+			null_str++;
+		}
+		return (count);
+	}
+
+	count += _putchar('0');
+	count += _putchar('x');
+
+	if (addr == 0)
+		return (count + _putchar('0'));
+
+	while (addr > 0)
+	{
+		hex[i] = hex_digits[addr % 16];
+		addr /= 16;
+		i++;
+	}
+
+	while (i > 0)
+	{
+		i--;
+		count += _putchar(hex[i]);
+	}
+
+	return (count);
+}

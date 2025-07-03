@@ -42,5 +42,8 @@ void _rot13(char *s);
 
 // print custom string with non-printable chars as \xXX
 int print_custom_string(va_list args);
+
+// print the pointer address
+int print_pointer(va_list args);
 #endif
 
