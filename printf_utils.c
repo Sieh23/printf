@@ -149,3 +149,99 @@ int print_unsigned(va_list args)
 
 	return (print_unsigned_recursive(n));
 }
+
+
+/**
+ * print_octal - Prints unsigned int in octal
+ * @args: Argument list
+ * Return: Number of characters printed
+ */
+int print_octal(va_list args)
+{
+	unsigned int n = va_arg(args, unsigned int);
+	int count = 0;
+	char octal[32];
+	int i = 0;
+
+	if (n == 0)
+		return (_putchar('0'));
+
+	while (n > 0)
+	{
+		octal[i] = (n % 8) + '0';
+		n /= 8;
+		i++;
+	}
+
+	while (i > 0)
+	{
+		i--;
+		count += _putchar(octal[i]);
+	}
+
+	return (count);
+}
+
+/**
+ * print_hex_lower - Prints unsigned int in lowercase hexadecimal
+ * @args: Argument list
+ * Return: Number of characters printed
+ */
+int print_hex_lower(va_list args)
+{
+	unsigned int n = va_arg(args, unsigned int);
+	int count = 0;
+	char hex[32];
+	int i = 0;
+	char hex_digits[] = "0123456789abcdef";
+
+	if (n == 0)
+		return (_putchar('0'));
+
+	while (n > 0)
+	{
+		hex[i] = hex_digits[n % 16];
+		n /= 16;
+		i++;
+	}
+
+	while (i > 0)
+	{
+		i--;
+		count += _putchar(hex[i]);
+	}
+
+	return (count);
+}
+
+/**
+ * print_hex_upper - Prints unsigned int in uppercase hexadecimal
+ * @args: Argument list
+ * Return: Number of characters printed
+ */
+int print_hex_upper(va_list args)
+{
+	unsigned int n = va_arg(args, unsigned int);
+	int count = 0;
+	char hex[32];
+	int i = 0;
+	char hex_digits[] = "0123456789ABCDEF";
+
+	if (n == 0)
+		return (_putchar('0'));
+
+	while (n > 0)
+	{
+		hex[i] = hex_digits[n % 16];
+		n /= 16;
+		i++;
+	}
+
+	while (i > 0)
+	{
+		i--;
+		count += _putchar(hex[i]);
+	}
+
+	return (count);
+}
