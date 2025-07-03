@@ -354,3 +354,54 @@ int print_pointer(va_list args)
 
 	return (count);
 }
+
+/**
+ * _strlen - Returns the length of a string
+ * @s: String to measure
+ * Return: Length of string
+ */
+int _strlen(char *s)
+{
+	int len = 0;
+
+	if (s == NULL)
+		return (0);
+
+	while (s[len])
+		len++;
+
+	return (len);
+}
+
+/**
+ * _strcpy - Copies a string
+ * @dest: Destination buffer
+ * @src: Source string
+ * Return: Pointer to dest
+ */
+char *_strcpy(char *dest, char *src)
+{
+	int i = 0;
+
+	if (dest == NULL || src == NULL)
+		return (NULL);
+
+	while (src[i])
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+
+	return (dest);
+}
+
+/**
+ * _abs - Returns absolute value of an integer
+ * @n: Integer to get absolute value of
+ * Return: Absolute value of n
+ */
+int _abs(int n)
+{
+	return (n < 0 ? -n : n);
+}

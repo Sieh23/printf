@@ -10,10 +10,21 @@
  * Responsible for storing our prototypes
  */
 
- /* Main printf function */
+ /**
+ * struct format - Struct for format specifiers
+ * @spec: The format specifier character
+ * @func: The function associated with the specifier
+ */
+typedef struct format
+{
+	char spec;
+	int (*func)(va_list);
+} format_t;
+
+/* Main printf function */
 int _printf(const char *format, ...);
 
- /* Helper functions */
+/* Helper functions */
 int print_string(va_list args);
  
 /* self-putchar function*/
@@ -45,5 +56,15 @@ int print_custom_string(va_list args);
 
 // print the pointer address
 int print_pointer(va_list args);
+
+// print the length of a string
+int _strlen(char *s);
+
+// copy a string from source to destination
+char *_strcpy(char *dest, char *src);
+
+// print the absolute value of an integer
+int _abs(int n);
+
 #endif
 
