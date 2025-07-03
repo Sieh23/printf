@@ -275,3 +275,32 @@ void _rot13(char *s)
                 s++;
         }
 }
+
+/**
+ * _rev_string - reverse string
+ * @c: takes the user input
+ * @s: starting of the string
+ * @e: ending of the string
+ * @blank: temporary storage
+ *
+ */
+
+void _rev_string(char *c)
+{
+        int s,e;
+        int ind;
+
+        for(ind = 0; c[ind] !='\0'; ind++);
+
+        e = ind - 1;
+
+        for(s = 0; s < e; s++)
+        {
+                int blank = c[s];
+                c[s] = c[e];
+                c[e] = blank;
+
+                e--;
+        }
+
+}
