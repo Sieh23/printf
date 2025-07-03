@@ -36,5 +36,9 @@ int print_binary(va_list args);
 int print_unsigned(va_list args);
 
 int print_octal(va_list args);
+
+/* this is rot13 function*/
+void _rot13(char *s);
+
 #endif
 
