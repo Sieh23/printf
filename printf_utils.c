@@ -275,3 +275,36 @@ void _rot13(char *s)
                 s++;
         }
 }
+
+
+/**
+ * print_custom_string - Prints string with non-printable chars as \xXX
+ * @args: Argument list
+ * Return: Number of characters printed
+ */
+int print_custom_string(va_list args)
+{
+	char *str = va_arg(args, char *);
+	int count = 0;
+	int i = 0;
+
+	if (str == NULL)
+		str = "(null)";
+
+	while (str[i])
+	{
+		if (str[i] < 32 || str[i] >= 127)
+		{
+			count += _putchar('\\');
+			count += _putchar('x');
+			count += print_hex_char(str[i]);
+		}
+		else
+		{
+			count += _putchar(str[i]);
+		}
+		i++;
+	}
+
+	return (count);
+}
