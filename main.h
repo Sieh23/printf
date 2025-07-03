@@ -69,5 +69,11 @@ int _abs(int n);
 /* the _rot13 function */
 void _rot13(char *c);
 
+// print hex upper and lower function prototypes
+int print_hex_upper(va_list args);
+int print_hex_lower(va_list args);
+
+// function to get the format function based on the specifier
+int get_format_func(char c, va_list args);
 #endif
 
