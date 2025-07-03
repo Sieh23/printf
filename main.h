@@ -23,22 +23,22 @@ int _putchar(char c);
 /* Conversion specifier i */
 int integer_i(int i);
 
-//helper function to print a percent sign
+/* helper function to print a percent sign */
 int print_percent(va_list args);
 
 
-// function to print an integer
+/* function to print an integer */
 int print_int(va_list args);
 
-// function to pring binary
+/* function to pring binary */
 int print_binary(va_list args);
 
 int print_unsigned(va_list args);
 
 int print_octal(va_list args);
 
-/* this is rot13 function*/
-void _rot13(char *s);
+/* this is the reverse string function*/
+void _rev_string(char *c);
 
 // print custom string with non-printable chars as \xXX
 int print_custom_string(va_list args);

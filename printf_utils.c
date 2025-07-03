@@ -246,34 +246,33 @@ int print_hex_upper(va_list args)
 	return (count);
 }
 
-
 /**
- * rot13 - Convert a character to its 13th place equavilent 
- * @s: holds the user input
- * @r: takes the character from s and does the conversion  
+ * _rev_string - reverse string
+ * @c: takes the user input
+ * @s: starting of the string
+ * @e: ending of the string
+ * @blank: temporary storage
+ *
  */
 
-void _rot13(char *s)
+void _rev_string(char *c)
 {
-        char r;
+        int s,e;
+        int ind;
 
-        while (*s)
+        for(ind = 0; c[ind] !='\0'; ind++);
+
+        e = ind - 1;
+
+        for(s = 0; s < e; s++)
         {
-                r = *s;
+                int blank = c[s];
+                c[s] = c[e];
+                c[e] = blank;
 
-                if (r >= 'A' && r <= 'Z')
-                {
-                        r = (((r - 'A' + 13) % 26) + 'A');
-                }
-
-                else if (r >= 'a' && r <= 'z')
-                {
-                        r = (((r - 'a' + 13) % 26) + 'a');
-                }
-
-                _putchar(r);
-                s++;
+                e--;
         }
+
 }
 
 
