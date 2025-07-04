@@ -5,12 +5,12 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-/**
- * This the the main function
- * Responsible for storing our prototypes
+/*
+ * This is the main header file
+ * Responsible for storing all function prototypes and structs
  */
 
- /**
+/*
  * struct format - Struct for format specifiers
  * @spec: The format specifier character
  * @func: The function associated with the specifier
@@ -24,56 +24,41 @@ typedef struct format
 /* Main printf function */
 int _printf(const char *format, ...);
 
-/* Helper functions */
+/* Format selector */
+int get_format_func(char c, va_list args);
+
+/* Character and string handling */
+int print_char(va_list args);
 int print_string(va_list args);
- 
-/* self-putchar function*/
-int _putchar(char c);
-
-
-/* Conversion specifier i */
-int integer_i(int i);
-
-/* helper function to print a percent sign */
 int print_percent(va_list args);
 
-
-/* function to print an integer */
+/* Integer and number handling */
 int print_int(va_list args);
-
-/* function to pring binary */
-int print_binary(va_list args);
-
 int print_unsigned(va_list args);
-
+int print_unsigned_recursive(unsigned int n);
+int print_binary(va_list args);
 int print_octal(va_list args);
-
-/* this is the reverse string function*/
-void _rev_string(char *c);
-
-/* print custom string with non-printable chars as \xXX */
-int print_custom_string(va_list args);
-
-/* print the pointer address */
-int print_pointer(va_list args);
-
-/* print the length of a string */
-int _strlen(char *s);
-
-/* copy a string from source to destination */
-char *_strcpy(char *dest, char *src);
-
-/* print the absolute value of an integer */
-int _abs(int n);
-
-/* the _rot13 function */
-void _rot13(char *c);
-
-// print hex upper and lower function prototypes
 int print_hex_upper(va_list args);
 int print_hex_lower(va_list args);
 
-// function to get the format function based on the specifier
-int get_format_func(char c, va_list args);
-#endif
+/* Pointer handling */
+int print_pointer(va_list args);
 
+/* Custom formats */
+int print_custom_string(va_list args);
+int print_rev(va_list args);
+int print_rot13(va_list args);
+
+/* Helper functions */
+int _putchar(char c);
+int _strlen(char *s);
+char *_strcpy(char *dest, char *src);
+int _abs(int n);
+int print_hex_char(char c);
+
+/* String transformations */
+void _rev_string(char *c);
+void _rot13(char *c);
+
+
+#endif /* MAIN_H */

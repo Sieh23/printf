@@ -58,7 +58,7 @@
 int get_format_func(char c, va_list args)
 {
 	format_t formats[] = {
-		{'c', _putchar},
+		{'c', print_char},
 		{'s', print_string},
 		{'d', print_int},
 		{'i', print_int},
@@ -69,8 +69,8 @@ int get_format_func(char c, va_list args)
 		{'X', print_hex_upper},
 		{'p', print_pointer},
 		{'S', print_custom_string},
-		{'r', _rev_string},
-		{'R', _rot13},
+		{'r', print_rev},
+		{'R', print_rot13},
 		{'\0', NULL}
 	};
 	int i = 0;
