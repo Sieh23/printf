@@ -59,6 +59,6 @@ int print_hex_char(char c);
 /* String transformations */
 void _rev_string(char *c);
 void _rot13(char *c);
-
+int get_format_func(char c, va_list args);
 
 #endif /* MAIN_H */
